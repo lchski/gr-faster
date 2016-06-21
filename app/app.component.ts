@@ -8,11 +8,23 @@ export class Shelf {
 
 @Component({
     selector: 'my-app',
-    template: '<h1>{{title}}</h1>'
+    template: `
+<h1>{{ title }}</h1>
+<ul>
+  <li *ngFor="let shelf of shelves" (click)="onSelect(shelf)">{{ shelf.name }}</li>
+</ul>
+<section *ngIf="selectedShelf">
+  <h2>Selected shelf: {{ selectedShelf.name }}</h2>
+</section>
+    `
 })
 export class AppComponent {
   title = 'Fast Web Wrapper';
   public shelves = SHELVES;
+  selectedShelf: Shelf;
+  onSelect(shelf: Shelf) {
+    this.selectedShelf = shelf;
+  }
 }
 
 const SHELVES: Shelf[] = [
