@@ -3,23 +3,7 @@ import { Component } from '@angular/core';
 import { Shelf } from "./shelf";
 import { ShelfDetailComponent } from "./shelf-detail.component";
 
-const SHELVES: Shelf[] = [
-  {
-    id: 87656268,
-    name: 'read',
-    book_count: 92
-  },
-  {
-    id: 87656267,
-    name: 'currently-reading',
-    book_count: 8
-  },
-  {
-    id: 87656266,
-    name: 'to-read',
-    book_count: 570
-  }
-];
+import { ShelfService } from "./shelf.service";
 
 @Component({
     selector: 'my-app',
@@ -30,12 +14,20 @@ const SHELVES: Shelf[] = [
 </ul>
 <shelf-detail [shelf]="selectedShelf"></shelf-detail>
 `,
-    directives: [ShelfDetailComponent]
+    directives: [ShelfDetailComponent],
+    providers: [ShelfService]
 })
 export class AppComponent {
   title = 'Fast Web Wrapper';
-  public shelves = SHELVES;
+  shelves = Shelf[];
   selectedShelf: Shelf;
+
+  constructor(private shelfService: ShelfService) {}
+
+  getShelves() {
+    this.shelves = this.shelfService.getShelves();
+  }
+
   onSelect(shelf: Shelf) {
     this.selectedShelf = shelf;
   }
