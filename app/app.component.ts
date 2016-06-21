@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
   constructor(private shelfService: ShelfService) {}
 
   getShelves() {
-    this.shelves = this.shelfService.getShelves();
+    this.shelfService.getShelves().then(shelves => this.shelves = shelves);
   }
 
   ngOnInit() {

@@ -5,6 +5,6 @@ import { SHELVES } from "./mock-shelves";
 @Injectable()
 export class ShelfService {
   getShelves() {
-    return SHELVES;
+    return Promise.resolve(SHELVES);
   }
 }
