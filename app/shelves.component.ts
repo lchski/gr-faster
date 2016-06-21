@@ -5,7 +5,7 @@ import { ShelfDetailComponent } from "./shelf-detail.component";
 import { ShelfService } from "./shelf.service";
 
 @Component({
-    selector: 'my-app',
+    selector: 'shelves-list',
     template: `
 <h1>{{ title }}</h1>
 <ul>
@@ -16,7 +16,7 @@ import { ShelfService } from "./shelf.service";
   directives: [ShelfDetailComponent],
   providers: [ShelfService]
 })
-export class AppComponent implements OnInit {
+export class ShelvesComponent implements OnInit {
   title = 'Fast Web Wrapper';
   shelves: Shelf[];
   selectedShelf: Shelf;
