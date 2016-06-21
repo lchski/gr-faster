@@ -4,11 +4,16 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-
 import {ShelfService} from "./shelf.service";
 import {ShelvesComponent} from "./shelves.component";
 
+import {SettingsComponent} from "./settings.component";
+
 @Component({
   selector: 'my-app',
   template: `
     <h1>{{ title }}</h1>
-    <a [routerLink]="['Shelves']">Shelves</a>
+    <nav>
+      <a [routerLink]="['Shelves']">Shelves</a>
+      <a [routerLink]="['Settings']">Settings</a>
+    </nav>
     <router-outlet></router-outlet>
   `,
   directives: [ROUTER_DIRECTIVES],
@@ -22,6 +27,11 @@ import {ShelvesComponent} from "./shelves.component";
     path: '/shelves',
     name: 'Shelves',
     component: ShelvesComponent
+  },
+  {
+    path: '/settings',
+    name: 'Settings',
+    component: SettingsComponent
   }
 ])
 export class AppComponent {
