@@ -8,7 +8,7 @@ import { Shelf } from "./shelf";
 <section *ngIf="shelf">
   <h2>Selected shelf: {{ shelf.name }}</h2>
 </section>
-`
+  `
 })
 export class ShelfDetailComponent {
   @Input()
