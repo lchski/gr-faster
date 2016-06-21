@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Shelf } from "./shelf";
 import { ShelfDetailComponent } from "./shelf-detail.component";
@@ -17,7 +17,7 @@ import { ShelfService } from "./shelf.service";
     directives: [ShelfDetailComponent],
     providers: [ShelfService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Fast Web Wrapper';
   shelves = Shelf[];
   selectedShelf: Shelf;
@@ -26,6 +26,10 @@ export class AppComponent {
 
   getShelves() {
     this.shelves = this.shelfService.getShelves();
+  }
+
+  ngOnInit() {
+    this.getShelves();
   }
 
   onSelect(shelf: Shelf) {
