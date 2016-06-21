@@ -12,7 +12,7 @@ import { ShelfService } from "./shelf.service";
 </ul>
 <shelf-detail [shelf]="selectedShelf"></shelf-detail>
     `,
-  directives: [ShelfDetailComponent]
+    directives: [ShelfDetailComponent]
 })
 export class ShelvesComponent implements OnInit {
   shelves: Shelf[];
