@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
+import {HTTP_PROVIDERS} from "@angular/http";
 
 import {ShelfService} from "./shelf.service";
 import {ShelvesComponent} from "./shelves.component";
@@ -19,6 +20,7 @@ import {SettingsComponent} from "./settings.component";
   directives: [ROUTER_DIRECTIVES],
   providers: [
     ROUTER_PROVIDERS,
+    HTTP_PROVIDERS,
     ShelfService
   ]
 })
