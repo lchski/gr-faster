@@ -1,4 +1,5 @@
 import {Component, OnInit} from "@angular/core";
+import {NgForm} from '@angular/common';
 
 import {Settings} from "./settings";
 import {SettingsService} from "./settings.service";
@@ -7,7 +8,7 @@ import {SettingsService} from "./settings.service";
   selector: 'user-settings',
   template: `
     <h2>Settings</h2>
-    <form>
+    <form (ngSubmit)="onSubmit()" *ngIf="settings">
       <label for="settingDeveloperKey">Developer key:</label>
       <input type="text" id="settingDeveloperKey" [(ngModel)]="settings.developer_key">
 

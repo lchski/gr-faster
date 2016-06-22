@@ -1,9 +1,13 @@
 import { Injectable } from "@angular/core";
 
+import { SETTINGS } from "./mock-settings";
+
 @Injectable()
 export class SettingsService {
   getSettings() {
-    return Promise.resolve(localStorage.getItem('fww-settings'));
+    console.log('getting settings');
+    return Promise.resolve(SETTINGS);
+    // return Promise.resolve(localStorage.getItem('fww-settings'));
   }
 
   setSettings(settings) {
