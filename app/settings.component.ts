@@ -37,5 +37,7 @@ export class SettingsComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+
+    this.settingsService.setSettings(this.settings);
   }
 }

@@ -5,9 +5,7 @@ import { SETTINGS } from "./mock-settings";
 @Injectable()
 export class SettingsService {
   getSettings() {
-    console.log('getting settings');
-    return Promise.resolve(SETTINGS);
-    // return Promise.resolve(localStorage.getItem('fww-settings'));
+    return Promise.resolve(JSON.parse(localStorage.getItem('fww-settings')));
   }
 
   setSettings(settings) {
