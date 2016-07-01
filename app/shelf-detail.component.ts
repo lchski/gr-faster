@@ -6,7 +6,9 @@ import { Shelf } from "./shelf";
   selector: 'shelf-detail',
   template: `
 <section *ngIf="shelf">
-  <h2>Selected shelf: {{ shelf.name }}</h2>
+  <h2>Selected shelf: {{ shelf.name }} ({{ shelf.id }})</h2>
+  
+  <p>Books on shelf: {{ shelf.book_count }}</p>
 </section>
   `
 })
