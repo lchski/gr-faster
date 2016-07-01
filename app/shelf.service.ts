@@ -13,10 +13,7 @@ export class ShelfService {
   constructor(private http: Http) { }
 
   getShelves(): Promise<Shelf[]> {
-    return this.http.get(this.shelvesUrl)
-      .toPromise()
-      .then(response => response)
-      .catch(this.handleError);
+    return Promise.resolve(SHELVES);
   }
 
   private handleError(error: any) {
