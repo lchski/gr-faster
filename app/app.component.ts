@@ -5,6 +5,7 @@ import {HTTP_PROVIDERS} from "@angular/http";
 import {ShelfService} from "./shelf.service";
 import {ShelvesComponent} from "./shelves.component";
 
+import {SettingsService} from "./settings.service";
 import {SettingsComponent} from "./settings.component";
 
 @Component({
@@ -21,7 +22,8 @@ import {SettingsComponent} from "./settings.component";
   providers: [
     ROUTER_PROVIDERS,
     HTTP_PROVIDERS,
-    ShelfService
+    ShelfService,
+    SettingsService
   ]
 })
 @RouteConfig([
